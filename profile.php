@@ -46,6 +46,8 @@
                                 aria-current="page">Dashboard</a>
                             <a href="#"
                                 class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Configurações</a>
+                            <a href="logout.php"
+                                class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Sair</a>
                         </div>
                     </div>
                 </div>
@@ -54,65 +56,19 @@
         <div class="sm:hidden" id="mobile-menu">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                <a href="#" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+                <a href="dash.php" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
                     aria-current="page">Dashboard</a>
                 <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Configurações</a>
             </div>
         </div>
     </nav>
-
-    <!-- adicionar twets -->
-    <div class="w-full h-auto flex justify-center">
-        <div class="bg-gray-100 w-2/4 h-auto flex flex-col justify-center items-center">
-            <h1 class="p-1.5">Esta pensando no que?</h1>
-            <input type="text" name="pensamento">
-            <input type="submit" value="Enviar" class="bg-yellow-300 py-1 px-5 m-1.5 rounded-3xl">
-        </div>
-
-    </div>
     <!-- twets -->
     <div class="flex justify-center">
-        <div class=" w-2/4 m-2.5">
-            <!-- box twett -->
-            <div class="border-2 border-gray-200 rounded-3xl w-full m-1.5 p-2.5">
-                <div class="flex flex-row items-start">
-                    <div class="bg-green-100 w-14 h-14"></div>
-                    <div class="h-auto m-1.5 flex flex-row">
-                        <p class="">Felipe</p>
-                        <p class="mx-1.5">@felps</p>
-                    </div>
-                </div>
-                <div class=" w-full">
-                    <div>
-                        <p class="p-2 pl-5">meu twitti vai ficar aqui</p>
-                    </div>
-                    <div class="bg-orange-200 w-full h-8 flex justify-around items-center">
-                        <p>curti</p>
-                        <p>comentar</p>
-                        <p>rePostar</p>
-                    </div>
-                </div>
-            </div>
-            <!-- box twett -->
-            <div class="border-2 border-gray-200 rounded-3xl w-full m-1.5 p-2.5">
-                <div class="bg-red-100 flex flex-row items-start">
-                    <div class="bg-green-100 w-14 h-14"></div>
-                    <div class="bg-green-200 h-auto m-1.5 flex flex-row">
-                        <p class="">Felipe</p>
-                        <p class="mx-1.5">@felps</p>
-                    </div>
-                </div>
-                <div class="bg-orange-100 w-full">
-                    <div>
-                        <p class="p-2 pl-5">meu twitti vai ficar aqui</p>
-                    </div>
-                    <div class="bg-orange-200 w-full h-8 flex justify-around items-center">
-                        <p>curti</p>
-                        <p>comentar</p>
-                        <p>rePostar</p>
-                    </div>
-                </div>
-            </div>
+        <div class=" w-full md:w-2/5 m-2.5">
+        <?php
+            include_once("getCommentsUser.php")
+        ?>
+            
         </div>
 
     </div>

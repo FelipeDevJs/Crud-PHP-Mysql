@@ -22,12 +22,4 @@ if($result->num_rows){
     $_SESSION['msg'] = "<spam style='color:red';>Email não cadastrado</spam>";
     header('Location: login.php');
 };
-// if($result){
-//     while($users = $result->fetch_object()){
-//         $name = $users->password;
-//         echo "$name";
-//     }
-// }else{
-//     echo "nao foi";
-// };
 ?>
