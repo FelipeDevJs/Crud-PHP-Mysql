@@ -42,10 +42,10 @@
                     </div>
                     <div class="hidden sm:block sm:ml-6">
                         <div class="flex space-x-4">
-                            <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
+                            <a href="dash.php" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium"
                                 aria-current="page">Dashboard</a>
-                            <a href="#"
-                                class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Configurações</a>
+                            <!-- <a href="#"
+                                class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Configurações</a> -->
                             <a href="logout.php"
                                 class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Sair</a>
                         </div>
@@ -58,17 +58,18 @@
                 <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                 <a href="dash.php" class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
                     aria-current="page">Dashboard</a>
-                <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Configurações</a>
+                <!-- <a href="#" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Configurações</a> -->
+                <a href="logout.php" class="bg-gray-900 text-white px-3 py-2 rounded-md text-sm font-medium">Sair</a>
             </div>
         </div>
     </nav>
     <!-- twets -->
     <div class="flex justify-center">
         <div class=" w-full md:w-2/5 m-2.5">
-        <?php
+            <?php
             include_once("getCommentsUser.php")
         ?>
-            
+
         </div>
 
     </div>

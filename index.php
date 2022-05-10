@@ -9,7 +9,7 @@ session_start()
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Index</title>
+    <title>Bem Vindo</title>
 </head>
 <body>
     <?php
@@ -24,22 +24,26 @@ session_start()
             <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Crie sua conta</h2>
             <p class="mt-2 text-center text-sm text-gray-600">
                 ou
-                <a href="login.php" class="font-medium text-indigo-600 hover:text-indigo-500"> Facça Login </a>
+                <a href="login.php" class="font-medium text-indigo-600 hover:text-indigo-500"> Faça Login </a>
             </p>
             </div>
             <form class="mt-8 space-y-6" action="cadastro.php" method="POST">
             <input type="hidden" name="remember" value="true">
             <div class="rounded-md shadow-sm -space-y-px">
                 <div>
-                <label for="email-address" class="sr-only">Nome de usuario</label>
-                <input name="name" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nome de usuario">
+                <label class="sr-only">Nome e Sobrenome</label>
+                <input name="nametodo" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nome e Sobrenome">
                 </div>
                 <div>
-                <label for="email-address" class="sr-only">Email address</label>
+                <label class="sr-only">Nome de usuario</label>
+                <input name="name" type="text" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Nome de usuario ex: @nome">
+                </div>
+                <div>
+                <label class="sr-only">Email address</label>
                 <input id="email-address" name="email" type="email" autocomplete="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Email address">
                 </div>
                 <div>
-                <label for="password" class="sr-only">Password</label>
+                <label class="sr-only">Password</label>
                 <input id="password" name="pwd" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
                 </div>
             </div>
