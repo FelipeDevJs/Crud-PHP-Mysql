@@ -16,14 +16,14 @@ $selectcommentsuser = "SELECT * FROM comments WHERE id_user='$id'";
 $res = $conn->query($selectcommentsuser);
 if($res->num_rows){
     while($com = $res->fetch_object()){
-        $id = $com->id;
+        $username = $com->username;
         $comment = $com->comment;
         echo "<div class='border-2 border-gray-200 rounded-3xl w-full m-1.5 p-2.5'>
         <div class='flex flex-row items-start'>
-            <div class='bg-green-100 w-14 h-14'></div>
+            <div class='bg-green-100 w-14 h-14 rounded-full'></div>
                 <div class='h-auto m-1.5 flex flex-row'>
                     <p></p>
-                    <p class='mx-1.5'>$id</p>
+                    <p class='mx-1.5'>$username</p>
                 </div>
             </div>
             <div class=' w-full'>
@@ -39,7 +39,7 @@ if($res->num_rows){
         </div>";
     }
 }else{
-    echo "erro 2";
+    echo "<p class='bg-gray-800 p-1.5 text-center text-white rounded-full'>Nenhum comentario encontrado !</p>";
 }
 
 ?>

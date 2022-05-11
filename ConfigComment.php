@@ -8,7 +8,8 @@ $result = $conn->query($buscarid);
 if($result->num_rows){
     while($user = $result->fetch_object()){
         $id = $user->id;
-        $sql = "INSERT INTO comments (id_user, comment) VALUES ('$id','$comment')";
+        $username = $user->name;
+        $sql = "INSERT INTO comments (id_user, username, comment) VALUES ('$id','$username','$comment')";
         if($conn->query($sql)=== TRUE){
             echo "Sucessoooooo";
             header("Location: dash.php");
