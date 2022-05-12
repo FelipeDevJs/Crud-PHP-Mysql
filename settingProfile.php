@@ -1,3 +1,7 @@
+<?php
+    require_once("settingProfileconfig.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -66,7 +70,7 @@
         <div class=" md:w-1/3 w-full h-auto">
             <div class=" w-full h-auto flex flex-col justify-center items-center">
                 <div class="w-20 h-20 mt-10">
-                    <img src="img/user.png" class="w-full h-full">
+                    
                 </div>
                 <div class="p-2">
                     <h1>Felipe</h1>
