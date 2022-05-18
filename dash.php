@@ -9,6 +9,7 @@ if(isset($_COOKIE['auth_token'])){
     if($result->num_rows){
         while($users = $result->fetch_object()){
             $name = $users->name;
+            $id = $users->id;
             setcookie('user_session', $name);
         }
     }else{
@@ -25,12 +26,18 @@ if(isset($_COOKIE['auth_token'])){
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="style/textearea.css">
+<script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+
 <title>dash</title>
 
 <body>
     <?php
         if($_COOKIE['user_session'] == null)
         header('Location: dash.php');
+        echo "<script> 
+                var socketIO = io('http://localhost:3000');
+                socketIO.emit('connected', '$id');
+            </script>" 
         ?>
     <nav class="bg-gray-800">
         <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -90,9 +97,7 @@ if(isset($_COOKIE['auth_token'])){
                                 class="bg-gray-800 flex text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                 <span class="sr-only">Open user menu</span>
-                                <img class="h-8 w-8 rounded-full"
-                                    src="img/user.png"
-                                    alt="">
+                                <img class="h-8 w-8 rounded-full" src="img/user.png" alt="">
                             </button>
                         </div>
 
@@ -126,10 +131,32 @@ if(isset($_COOKIE['auth_token'])){
         ?>
         <!-- twets -->
         <div class="flex justify-center">
-          <div class=" w-full md:w-2/5 m-2.5">
-            <?php
+            <div class=" w-full md:w-2/5 m-2.5">
+                <?php
               include_once("getComments.php");  
             ?>
+            </div>
+            <div class="bg-gray-500 absolute overflow-auto right-5 w-60 h-auto">
+                
+                <div class="w-52 flex justify-center p-2.5 text-white">
+                    <p>Amigos Online</p>
+                </div>
+                <div class=" w-full h-72 ">
+                    <?php
+                        include_once("searchuser.php");
+                    ?>
+                    <!-- <div class="w-44 h-auto p-1.5 flex flex-row border-y-2">
+                        <div class="w-9 h-9 rounded-full  bg-red-400"></div>
+                        <div class="w-4/5 h-10 flex justify-between items-center">
+                            <div class="p-2.5">
+                                <p>Felipe</p>
+                            </div>
+                            <div class="p-2.5">
+                                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
+                            </div>    
+                        </div>
+                    </div> -->
+                </div>
             </div>
         </div>
     </div>
